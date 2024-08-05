@@ -5,7 +5,7 @@ sequenceDiagram
     Customer->> Catalog API: Call the Insert/modify/Delete API (pid)
     Catalog API ->> Indexing Service: Indexing Request
     Indexing Service ->> Indexing Queue: Insert the request with pid and metadata
-    Indexing Queue ->>  Production Understanding: Pull a request and starting processing
+    Production Understanding ->> Indexing Queue : Pull a request and starting processing
     Production Understanding ->> Global Config: read System and Customer App configuration
     Production Understanding ->> Production Understanding: Featurization (if Insert or modify of specific metadata)
     Production Understanding ->> Catalog Database : Update indexing status
