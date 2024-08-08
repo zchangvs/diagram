@@ -1,5 +1,7 @@
 ```mermaid
-title MultiSearch indexing
+---
+title : MultiSearch indexing
+---
 flowchart TD
     Start[start] --> IS[Indexing Service<br>receives request]
     IS --> IQ[Insert the request to queue]
