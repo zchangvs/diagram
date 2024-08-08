@@ -1,13 +1,23 @@
 ```mermaid
-sequenceDiagram
-    autonumber
-    Actor Customer
-    Customer->> Catalog API: Call the Insert or Modify or Delete API (pid)
-    Catalog API ->> Indexing Service: Indexing Request
-    Indexing Service ->> Indexing Queue: Insert the request with pid and metadata
-    Production Understanding ->> Indexing Queue : Pull a request and starting processing
-    Production Understanding ->> Global Config: read System and Customer App configuration
-    Production Understanding ->> Production Understanding: Featurization (if Insert or modify of specific metadata)
-    Production Understanding ->> Catalog Database : Update indexing status
-    Production Understanding ->> Vector Database: Insert Modify Delete the record for the pid
+---
+title: consumer search with both text and image
+---
+flowchart TD
+    ST[start] --> A(query text<br>and/or image)
+    A --> B(client side<br>widget processing)
+    B --> S(update tracking)
+    B --> C(product search<br>server receives request)
+    C --> TQ{text?}
+    TQ--> |yes| D1(Understand the<br>query text)
+    C --> IQ{image?}
+    IQ--> |yes| D2(featurize the<br>query image)
+    D1 --> E(search for<br>result)
+    D2 --> E
+    TQ--> |no| E
+    IQ--> |no| E 
+    E --> F(return<br>result)
+    F --> G(update<br>statistics)
+    G --> END[END] 
+
+
 ```
