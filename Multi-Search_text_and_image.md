@@ -17,7 +17,7 @@ flowchart TD
     TQ--> |no| E1
     IQ--> |no| E1 
     E1 --> E2(apply rerank & filter logic)
-    E2 --> F[return result<br>to reuqester]
+    E2 --> F[return result]
     F --> G(update statistics)
     G --> END[END] 
 
