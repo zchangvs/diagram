@@ -1,6 +1,7 @@
 ```mermaid
 sequenceDiagram
     autonumber
+    title Customer Data Ingestion
     Actor Customer
     Customer->> Catalog API: Call the Insert or Modify or Delete API (pid)
     Catalog API ->> Indexing Service: Indexing Request
