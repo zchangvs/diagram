@@ -1,6 +1,6 @@
 ```mermaid
 ---
-title: consumer search with both text and image
+title: Consumer Search with Text and/or Image
 ---
 flowchart TD
     ST[start] --> A[query text<br>and/or image]
