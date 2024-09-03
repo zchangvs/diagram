@@ -1,4 +1,12 @@
-%%    ST[start] --> A[query text<br>and/or image]
-%%    A --> B{client side<br>widget}
-%%    B -->|yes| S(update<br>event tracking)
-%%    B --> |no| C[product search<br>server receives request]
+```mermaid
+---
+title: Receive Search Request
+---
+flowchart TD
+    ST[start] --> QU[query text<br>and/or image]
+    QU --> WI{client side<br>widget}
+    WI --> |yes| ET(update<br>event tracking)
+    WI --> |no| PS[product search<br>server receives request]
+    ET --> PS
+    PS --> EN[END]
+```
