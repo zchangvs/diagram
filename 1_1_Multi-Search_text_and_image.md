@@ -5,7 +5,7 @@ title: 1.1 Consumer Search with Text and/or Image
 flowchart LR
     ST[START]--> RSR(2.1 Receive search request)
     RSR --> IQ{image?}
-    IQ--> |yes| FI(2.2 featurize the<br>query image)
+    IQ--> |yes| FI(2.2 featurize query image)
     IQ --> |no| TQ{text?}
     FI --> TQ 
     TQ --> |yes| D1(2.3 Understand the<br>query text)
