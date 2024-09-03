@@ -7,8 +7,8 @@ flowchart TD
 %%    A --> B{client side<br>widget}
 %%    B -->|yes| S(update<br>event tracking)
 %%    B --> |no| C[product search<br>server receives request]
-    ST[START]--> PS(product search<br>server receives request)
-    PS --> IQ{image?}
+    ST[START]--> RSR(Receives search request)
+    RSR --> IQ{image?}
     IQ--> |yes| FI(featurize the<br>query image)
     IQ --> |no| TQ{text?}
     FI --> TQ 
