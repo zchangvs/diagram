@@ -1,0 +1,25 @@
+```mermaid
+---
+title: Consumer Search with Text and/or Image
+---
+flowchart TD
+%%    ST[start] --> A[query text<br>and/or image]
+%%    A --> B{client side<br>widget}
+%%    B -->|yes| S(update<br>event tracking)
+%%    B --> |no| C[product search<br>server receives request]
+    ST --> C(product search<br>server receives request)
+    C --> TQ{text?}
+    TQ--> |yes| D1(Understand the<br>query text)
+    C --> IQ{image?}
+    IQ--> |yes| D2(featurize the<br>query image)
+    D1 --> E1(search for<br>candidates)
+    D2 --> E1
+    TQ--> |no| E1
+    IQ--> |no| E1 
+    E1 --> E2(Rerank & filter logic)
+    E2 --> F(Post-processing)
+%%    F --> G(update statistics)
+    G --> END[END] 
+
+
+```
