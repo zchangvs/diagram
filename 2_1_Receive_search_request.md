@@ -2,11 +2,11 @@
 ---
 title: Receive Search Request
 ---
-flowchart TD
-    ST[start] --> QU[query text<br>and/or image]
-    QU --> WI{client side<br>widget}
-    WI --> |yes| ET(update<br>event tracking)
-    WI --> |no| PS[product search<br>server receives request]
+flowchart LR
+    ST[start] --> QU[query text and/or image]
+    QU --> WI{Client side widget}
+    WI --> |yes| ET(3.1 Event tracking)
+    WI --> |no| PS[product search server receives request]
     ET --> PS
     PS --> EN[END]
 ```
