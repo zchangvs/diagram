@@ -10,6 +10,7 @@ flowchart LR
     RC --> PU(2.1.1 Production Understanding)
     PU --> CU[Update Product Catalog]
     PU --> VD[Vector Database: Insert/update record]
-    CU --> ED[END]
-    VD --> ED
+    VD --> REP[Replicate the data to all regional deployments]
+    REP --> ED[END]
+    CU --> ED
 ```
