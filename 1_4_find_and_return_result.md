@@ -11,5 +11,6 @@ flowchart LR
     CB --> RR
     RR --> FTLNER(1.4.4 NER Filter)
     FTLNER --> FTLFAC(1.4.5 Facet filter)
-    FTLFAC --> ED[END]
+    FTLFAC --> AMD[Attach metadata for results]
+    AMD --> ED[END]
 ```
