@@ -8,7 +8,7 @@ flowchart LR
     IQ--> |yes| FI(2.2 featurize query image)
     IQ --> |no| TQ{text?}
     FI --> TQ 
-    TQ --> |yes| D1(2.3 Understand the<br>query text)
+    TQ --> |yes| D1(2.3 Understand query text)
     TQ --> |no| E1(2.4 find and return result)
     D1 --> E1
 %%    D1 --> E1(search for<br>candidates)
