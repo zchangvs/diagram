@@ -9,8 +9,8 @@ flowchart LR
     PQ --> RC[Read Global and App Config]
     RC --> PU(2.1.1 Production Understanding)
     PU --> CU[Update Product Catalog]
-    PU --> VD[Vector Database: Insert/update record]
-    VD --> REP[Replicate the data to all regional deployments]
+    PU --> VD[Vector DB update]
+    VD --> REP[Replicate data to all regional deployments]
     REP --> ED[END]
     CU --> ED
 ```
