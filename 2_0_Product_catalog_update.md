@@ -9,7 +9,7 @@ flowchart LR
     CON --> UP
     AP --> UP
     FF --> UP[Update Product database]
-    UP --> APP{Existing App}
+    UP --> APP{Existing<br>App}
     APP --> |yes| IQ[Insert to index queue]
     IQ -- insert/update --> PIU(2.1 Product Insert Update)
     IQ -- delete --> DEL(2.2 Product Delete)
