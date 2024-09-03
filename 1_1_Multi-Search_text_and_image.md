@@ -3,11 +3,7 @@
 title: Consumer Search with Text and/or Image
 ---
 flowchart TD
-%%    ST[start] --> A[query text<br>and/or image]
-%%    A --> B{client side<br>widget}
-%%    B -->|yes| S(update<br>event tracking)
-%%    B --> |no| C[product search<br>server receives request]
-    ST[START]--> RSR(Receives search request)
+    ST[START]--> RSR(Receive search request)
     RSR --> IQ{image?}
     IQ--> |yes| FI(featurize the<br>query image)
     IQ --> |no| TQ{text?}
