@@ -8,7 +8,7 @@ flowchart LR
     PQ -- next request --> PQ
     PQ --> RC[Read Global and App Config]
     RC --> PU(2.1.1 Production Understanding)
-    PU --> CU[Catalog Update]
+    PU --> CU[Update Product Catalog]
     PU --> VD[Vector Database: Insert/update record]
     CU --> ED[END]
     VD --> ED
