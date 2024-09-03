@@ -19,7 +19,7 @@ flowchart TD
     E1 --> E2(Rerank & filter logic)
     E2 --> F(Post-processing)
 %%    F --> G(update statistics)
-    G --> END[END] 
+    F --> END[END] 
 
 
 ```
