@@ -3,11 +3,8 @@
 title: 2.3 Understand query text
 ---
 flowchart LR
-    ST[start] --> DS(3.2 Download and Store image)
-    DS --> MO{Multiple objects detection}
-    MO --> |yes| SD(3.3 Single hero object detection)
-    MO --> |no| MD(3.4 Multiple objects detection)
-    SD --> RO(3.5 Recognize Object)
-    MD --> RO
-    RO -- next object --> RO
-    RO --> ED[END] 
+    ST[START] --> CNER{Name Entity Recognition}
+    CNER --> |yes| NER(3.6 NER processing)
+    CNER --> |no| TF(3.7 tokenization and featurization)
+    NER --> TF
+    TF --> ED[END] 
