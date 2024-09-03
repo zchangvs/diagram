@@ -8,9 +8,9 @@ flowchart LR
     ST -- File fetch --> FF[Parse input file]
     CON --> UP
     AP --> UP
-    FF --> UP(2.1 Update Product database)
+    FF --> UP[Update Product database]
     UP --> APP{Existing App}
-    APP --> |yes| UI(2.2 Update indexing)
+    APP --> |yes| UI(2.1 Update indexing)
     APP --> |no| ED[END]
     UI --> ED[END] 
 
