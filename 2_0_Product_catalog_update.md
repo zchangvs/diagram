@@ -10,9 +10,9 @@ flowchart LR
     AP --> UP
     FF --> UP[Update Product database]
     UP --> APP{Existing App}
-    APP --> |yes| UI(2.1 Update indexing)
+    APP --> |yes| PIU(2.1 Product Insert Update)
     APP --> |no| ED[END]
-    UI --> ED[END] 
+    PIU --> ED[END] 
 
 
 ```
