@@ -7,17 +7,17 @@ flowchart TD
 %%    A --> B{client side<br>widget}
 %%    B -->|yes| S(update<br>event tracking)
 %%    B --> |no| C[product search<br>server receives request]
-    ST --> C(product search<br>server receives request)
-    C --> TQ{text?}
-    TQ--> |yes| D1(Understand the<br>query text)
-    C --> IQ{image?}
-    IQ--> |yes| D2(featurize the<br>query image)
-    D1 --> E1(search for<br>candidates)
-    D2 --> E1
-    TQ--> |no| E1
-    IQ--> |no| E1 
-    E1 --> E2(Rerank & filter logic)
-    E2 --> F(Post-processing)
+    ST --> PS(product search<br>server receives request)
+    PS --> IQ{image?}
+    IQ--> |yes| FI(featurize the<br>query image)
+    IQ --> |no| TQ{text?}
+    FI --> TQ 
+    TQ --> |yes| D1(Understand the<br>query text)
+    TQ --> |no| E1(find and return result)
+    D1 --> E1
+%%    D1 --> E1(search for<br>candidates)
+%%    E1 --> E2(Rerank & filter logic)
+    E1 --> F(Post-processing)
 %%    F --> G(update statistics)
     F --> END[END] 
 
