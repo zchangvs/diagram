@@ -1,14 +1,15 @@
 ```mermaid
-sequenceDiagram
-    autonumber
-    title Customer Data Ingestion, Assume the Multi-search App is already created
-    Actor Customer
-    Customer->> Catalog API: Call the Insert or Modify or Delete API (pid)
-    Catalog API ->> Indexing Service: Indexing Request
-    Indexing Service ->> Indexing Queue: Insert the request with pid and metadata
-    Production Understanding ->> Indexing Queue : Pull a request and starting processing
-    Production Understanding ->> Global Config: read System and Customer App configuration
-    Production Understanding ->> Production Understanding: Featurization (if Insert or modify of specific metadata)
-    Production Understanding ->> MS Catalog Database : Update indexing status
-    Production Understanding ->> Vector Database: Insert Modify Delete the record for the pid
+---
+title: 2.2.1 Product Insert and Update
+---
+flowchart LR
+    ST[START] --> IQ[Add to Indexing Queue]
+    IQ --> PQ[Pull request from Queue]
+    PQ -- next request --> PQ
+    PQ --> RC[Read Global and App Config]
+    RC --> PU(Production Understanding)
+    PU --> CU[Catalog Update]
+    PU --> VD[Vector Database: Insert/update record]
+    CU --> ED[END]
+    VD --> ED
 ```
