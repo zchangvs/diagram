@@ -1,6 +1,6 @@
 ```mermaid
 ---
-title: Receive Search Request
+title: 2.1 Receive Search Request
 ---
 flowchart LR
     ST[start] --> QU[query text and/or image]
