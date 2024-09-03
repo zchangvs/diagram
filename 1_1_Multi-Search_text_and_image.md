@@ -2,7 +2,7 @@
 ---
 title: Consumer Search with Text and/or Image
 ---
-flowchart TD
+flowchart LR
     ST[START]--> RSR(Receive search request)
     RSR --> IQ{image?}
     IQ--> |yes| FI(featurize the<br>query image)
