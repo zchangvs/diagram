@@ -7,4 +7,5 @@ flowchart LR
     CNER --> |yes| NER(1.3.1 NER processing)
     CNER --> |no| TF(1.3.2 tokenization and featurization)
     NER --> TF
-    TF --> ED[END] 
+    TF --> ED[END]
+```
