@@ -10,9 +10,12 @@ flowchart LR
     AP --> UP
     FF --> UP[Update Product database]
     UP --> APP{Existing App}
-    APP --> |yes| PIU(2.1 Product Insert Update)
+    APP --> |yes| IQ[Insert to index queue]
+    IQ -- insert/update --> PIU(2.1 Product Insert Update)
+    IQ -- delete --> DEL(2.2 Product Delete)
     APP --> |no| ED[END]
-    PIU --> ED[END] 
+    PIU --> ED
+    DEL --> ED 
 
 
 ```
